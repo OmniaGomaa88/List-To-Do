@@ -16,7 +16,7 @@ const server = express();
 
 server.engine("ejs",ejs.renderFile);
 
-server.set("views","./src/views/")
+server.set("views","./src/views")
  server.use(routeur)
 server.listen(8080,()=>{
    console.log("hello")

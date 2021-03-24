@@ -7,17 +7,11 @@
     <title>Home page</title>
 </head>
 <body>
-    <h1>Welcome to our site </h1>
-    <ul> List de list de taches
-        <li>
-            list de tache
-        </li>
-        <li>
-            list de tache
-        </li>
-        <li>
-            list de tache
-        </li>
-    </ul>
+    <h1>Liste des tache</h1>
+
+    <ul>
+      <% list.forEach((el) => { %>
+        <li><%= el.nom %></li>
+      <% }) %>
 </body>
 </html>
