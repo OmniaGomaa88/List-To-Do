@@ -1,7 +1,8 @@
+// requir le fichier qui contien toute le configration de contacter àla base de donnée
 const db= require("../db")
-
-// function pour fair requit sql
+// exporter function getAll 
 exports.getAll = (callback) => {
+  // method query pour faire requett sql
     db.query("SELECT * FROM List_de_Tache;", (error, result) => {
       if (error) {
         console.log("error: ", error);
@@ -12,16 +13,4 @@ exports.getAll = (callback) => {
       callback(null, result);
     })
   }
-// /exports.getAll=(callback){
-// /    db.query("SELECT * FROM List_de_Tache",(error,result)=>{
-// /    if(error){
-// /        console.log("error:",error)
-// /        callback(error,null)
-// /        return;
-// /    }
-// /    console.log("lest de tache",result)
-// /    callback(null,result)
-// /})
-// /}
-// /}
-// /
+
