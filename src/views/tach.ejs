@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>description de tahce</h1>
+    <h1>les taches </h1>
+    <% tache.forEach((tache) => { %>
+         <p> <a href="/tache/<%= tache.ID %>">
+             <%= tache.Description %> </a> </p>
+             <p> <%= tache.Date_de_creation.toString('YYYY-MM-DD') %> </p>
+             <p> <%= tache.Fini %> </p>
+      <%})%>
 </body>
 </html>

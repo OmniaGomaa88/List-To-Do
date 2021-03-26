@@ -29,9 +29,14 @@ exports.findOne=(request,response,)=>{
    
 }
 // function pour afficher Tache ditailes
-exports.findTacheDita=(request,response)=>{
+exports.findTacheDétail=(request,response)=>{
 const {id}=request.params
-
+tache.TacheDétail(id,(error,tache)=>{
+    if(error){
+        response.send(error.message)
+    }
+    response.render("tach.ejs",{tache})
+})
 }
 
 
