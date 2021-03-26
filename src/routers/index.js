@@ -8,6 +8,7 @@ const listController=require("../controllers/listsController")
 // le url ici c'est le  controller qui vas le gérer
 routeur.get("/", listController.findAll)
 routeur.get("/lists/:id",listController.findOne)
+routeur.get("/tache/:id",listController.findOne)
 routeur.post("/list",listController.addList)
 
 // créer module local de le routeur

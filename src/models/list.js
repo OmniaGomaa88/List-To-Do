@@ -28,16 +28,6 @@ exports.getAll = (callback) => {
       callback(null, result);
     })
   }
-  exports.gitOne=(id,callback)=>{
-    db.query(`SELECT * FROM List_de_Tache inner join tache on List_de_Tache.list_id = tache.ID 
-    WHERE tache.ID = ${id}`, (error, result) => {
-      if (error) {
-        console.log("error: ", error);
-        callback(error, null);
-        return;
-      }
-   console.log(result)
-      callback(null, result);
-    })
-  }
+
+  
 

@@ -2,6 +2,7 @@
 const  {request, response}= require('express')
 // recouper le list model
 const list= require("../models/list")
+const tache=require("../models/tach")
 
 exports.findAll= (request,response) =>{
     // utiliser le function getAll qui est créer dans le list modul
@@ -16,17 +17,24 @@ exports.findAll= (request,response) =>{
 
 }
 // function findeOne pour chaque list url id
-exports.findOne=(request,response)=>{
+exports.findOne=(request,response,)=>{
     const {id}=request.params
-    list.gitOne(id,(error,tache)=>{
+    tache.getOne(id,(error,tache)=>{
         if(error){
             response.send(error.massege)
         }
-     console.log(tache)
+     console.log(tache[0])
         response.render("list.ejs",{tache})
     })
    
 }
+// function pour afficher Tache ditailes
+exports.findTacheDita=(request,response)=>{
+const {id}=request.params
+
+}
+
+
 // function pour ajouter data
 exports.addList=(request,response)=>{
     console.log(request.body)

@@ -7,12 +7,11 @@
     <title>List de tache</title>
 </head>
 <body>
-    <h1>list de tache</h1>
-    <% tache.forEach((tache) => { %>
-         <p> <%= tache.Description %> </p>
-      <%})%>
-  
    
-
+    <h1>les taches </h1>
+    <% tache.forEach((tache) => { %>
+         <p> <a href="/tache/<%= tache.ID %>">
+             <%= tache.Description %> </a> </p>
+      <%})%>
 </body>
 </html>

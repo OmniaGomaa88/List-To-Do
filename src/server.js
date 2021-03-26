@@ -6,7 +6,6 @@
 // 7 utiliser le model routeur,par déclarer router avec le url de le routeur
 // ........................................................
 const express  = require("express");
-
 const ejs=require('ejs');
 const routeur= require("./routers")
 const server = express();
@@ -17,6 +16,6 @@ server.engine("ejs",ejs.renderFile);
 server.use(express.urlencoded({ extended: false }));
 server.set("views","./src/views")
  server.use(routeur)
-server.listen(8080,()=>{
+server.listen(3030,()=>{
    console.log("hello")
 })
