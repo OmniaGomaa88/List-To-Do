@@ -9,10 +9,21 @@
 </head>
 <body>
     <h1>Liste des tache</h1>
-
+<form action="/list" method="POST">
+<input type="text" name="field1">
+<input type="submit">
+</form>
+<!-- ............. -->
     <ul>
       <% list.forEach((el) => { %>
-        <li><%= el.nom %></li>
-      <% }) %>
+  
+      <li>
+        <a href="/lists/<%= el.list_id %>">
+           
+                <%= el.nom %>
+        </a>
+    </li>
+    <%})%>
+    </ul>
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-const {response, request}= require('express')
+const  {request, response}= require('express')
 // recouper le list model
 const list= require("../models/list")
 
@@ -15,7 +15,26 @@ exports.findAll= (request,response) =>{
     })
 
 }
-// function findeOne pour chaque list
+// function findeOne pour chaque list url id
 exports.findOne=(request,response)=>{
-   response.send("ça function")
+    const {id}=request.params
+    list.gitOne(id,(error,tache)=>{
+        if(error){
+            response.send(error.massege)
+        }
+     console.log(tache)
+        response.render("list.ejs",{tache})
+    })
+   
+}
+// function pour ajouter data
+exports.addList=(request,response)=>{
+    console.log(request.body)
+    list.InsertData(request.body.field1, (error, tasks) => {
+        if (error) {
+            response.send(error.message);
+        }
+
+        response.redirect("/");
+    })
 }

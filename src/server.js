@@ -14,7 +14,7 @@ const server = express();
 server.use(express.static("./src/statice"))
 // indiquer à la server quel metour de rendu il faut utiliser et avc quel fanction
 server.engine("ejs",ejs.renderFile);
-
+server.use(express.urlencoded({ extended: false }));
 server.set("views","./src/views")
  server.use(routeur)
 server.listen(8080,()=>{
