@@ -11,19 +11,24 @@
     <h1>Liste des tache</h1>
 <form action="/list" method="POST">
 <input type="text" name="field1">
-<input type="submit">
+<input type="submit" value="Add">
 </form>
 <!-- ............. -->
-    <ul>
+
+
+<!--  -->
+<div id="list-container">
       <% list.forEach((el) => { %>
-  
-      <li>
-        <a href="/lists/<%= el.list_id %>">
+             <div id="text">
+                 <a href="/lists/<%=el.list_id %>">
            
-                <%= el.nom %>
-        </a>
-    </li>
-    <%})%>
-    </ul>
+                         <p><%= el.nom %></p> 
+                  </a>
+                         <a href="/DeletList/<%=el.list_id %>">  <button  name="list"> Suprimer</button> </a>
+                        </div>
+                     
+      <%})%>
+    </div>        
+
 </body>
 </html>

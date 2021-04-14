@@ -51,3 +51,26 @@ exports.addList=(request,response)=>{
         response.redirect("/");
     })
 }
+// DeletList
+exports.DeleteList=(Request,response,next)=>{
+    const {id}=Request.params
+    console.log(id)
+    list.DROPList(id,(error,list)=>{
+        if (error) {
+            response.send(error.message);
+        }
+
+        response.redirect("/");
+    })
+}
+// function pour ajouter tache
+exports.addTahce=(request, response)=>{
+    const tach =request.body.tach
+    tache.insertTache(tach,(error,tache)=>{
+        if (error) {
+            response.send(error.message)
+            
+        }
+        response.redirect("/lists/:id");
+    })
+}

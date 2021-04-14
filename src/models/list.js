@@ -28,6 +28,17 @@ exports.getAll = (callback) => {
       callback(null, result);
     })
   }
+  exports.DROPList=(id, callback)=>{
+    db.query(`DELETE FROM List_de_Tache WHERE List_de_Tache.list_id = ("${id}");`, (error,result)=>{
+      if(error){
+        console.log("error: ", error);
+        callback(error, null);
+        return;
+      }
+      callback(null, result);
+    })
+  }
+  
 
   
 

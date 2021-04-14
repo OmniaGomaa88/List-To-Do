@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
     <title>List de tache</title>
 </head>
 <body>
+
+  
    
     <h1>les taches </h1>
-    <% tache.forEach((tache) => { %>
-         <p> <a href="/tache/<%= tache.ID %>">
-             <%= tache.Description %> </a> </p>
-             <p> <%= tache.Fini %> </p>
+    <form action="/newTache" method="POST">
+        <input type="text" name="tach">
+        <input type="submit">
+        </form>
+        <!-- ............. -->
+    <div id="list-container">
+        
+    <% tache.forEach((tache) => { %> 
+        <div id="text">
+          <a href="/tache/<%= tache.ID %>">
+            <p> <%= tache.Description %>  </p></a>
+<button id="fini">fini</button>
+</div>
       <%})%>
+       
+    
+</div>
 </body>
+<script>
+    let fini=document.getElementById("fini")
+    console.log(fini.nodeType)
+    let text=document.getElementsByTagName("p")
+    fini.addEventListener("click",function(){
+        console.log("ok")
+text.style.textDecoration="line-through"
+    })
+    
+</script>
 </html>

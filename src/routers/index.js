@@ -1,6 +1,8 @@
+const { request, response } = require("express");
 const express = require("express");
 // créer routeur un comboson express
 const routeur = express.Router();
+
 
 const listController=require("../controllers/listsController")
 // on ecrir tout les routes que on veut le routeur les envoyer à la controller
@@ -8,8 +10,13 @@ const listController=require("../controllers/listsController")
 // le url ici c'est le  controller qui vas le gérer
 routeur.get("/", listController.findAll)
 routeur.get("/lists/:id",listController.findOne)
+// 
+// ...................................
 routeur.get("/tache/:id",listController.findTacheDétail)
 routeur.post("/list",listController.addList)
+//delet list
+routeur.get("/DeletList/:id",listController.DeleteList)
+
 
 // créer module local de le routeur
 module.exports = routeur;
