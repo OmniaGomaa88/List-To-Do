@@ -12,8 +12,10 @@ routeur.get("/", listController.findAll)
 routeur.get("/lists/:id",listController.findOne)
 // 
 // ...................................
+routeur.post("/lists/:listId",listController.addTahce)
 routeur.get("/tache/:id",listController.findTacheDétail)
 routeur.post("/list",listController.addList)
+routeur.get("/UpdateFini/:id",listController.UpdateTacheFini)
 //delet list
 routeur.get("/DeletList/:id",listController.DeleteList)
 

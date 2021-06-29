@@ -26,8 +26,8 @@ exports.TacheDétail=(id,callback)=>{
     // function add tache
 }
 // function to add new tache
-exports.insertTache=(tach,callback)=>{
-db.query( `INSERT INTO tache (Description) VALUES ("${tach}");`,(error,result)=>{
+exports.insertTache=(tach,listId,callback)=>{
+db.query( `INSERT INTO tache (Description,list_ID) VALUES ("${tach}","${listId}");`,(error,result)=>{
   if(error){
     callback(error,null)
     return;
@@ -36,3 +36,15 @@ console.log(result)
 callback(null,result)
 })
 }
+// marquer que  une taches términer
+exports.UpdateFini=(idTest,callback)=>{
+ 
+  db.query( `UPDATE tache SET Fini = 0 WHERE ID =("${idTest}");`,(error,result)=>{
+    if(error){
+      callback(error,null)
+      return;
+  }
+  console.log("updat Fini")
+  callback(null,result)
+  })
+  }

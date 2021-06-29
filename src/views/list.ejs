@@ -12,18 +12,18 @@
   
    
     <h1>les taches </h1>
-    <form action="/newTache" method="POST">
+    <form action="/lists" method="POST">
         <input type="text" name="tach">
-        <input type="submit">
+        <input type="submit" value="add">
         </form>
         <!-- ............. -->
-    <div id="list-container">
+    <div id="taches-container">
         
     <% tache.forEach((tache) => { %> 
         <div id="text">
           <a href="/tache/<%= tache.ID %>">
             <p> <%= tache.Description %>  </p></a>
-<button id="fini">fini</button>
+    <a href="/UpdateFini/<%= tache.ID %>"><button id="fini" >fini</button></a>
 </div>
       <%})%>
        

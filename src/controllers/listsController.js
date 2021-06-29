@@ -23,7 +23,7 @@ exports.findOne=(request,response,)=>{
         if(error){
             response.send(error.massege)
         }
-     console.log(tache[0])
+    
         response.render("list.ejs",{tache})
     })
    
@@ -66,7 +66,21 @@ exports.DeleteList=(Request,response,next)=>{
 // function pour ajouter tache
 exports.addTahce=(request, response)=>{
     const tach =request.body.tach
-    tache.insertTache(tach,(error,tache)=>{
+    const listId =request.params
+    console.log(request)
+    tache.insertTache(tach,listId,(error,tache)=>{
+        if (error) {
+            response.send(error.message)
+            
+        }
+        response.redirect("/lists/:id");
+    })
+}
+// marquer que tach est términé
+exports.UpdateTacheFini=(request, response)=>{
+    TachId= request.paramss
+    console.log(" the tach id"+" "+ TachId)
+    tache.UpdateFini(TachId,(error,tache)=>{
         if (error) {
             response.send(error.message)
             

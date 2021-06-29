@@ -12,7 +12,16 @@ body{
     width: 50%;
    padding: 2%;
    margin: 1%;
+  
 
+}
+#taches-container{
+    background-color: rgb(228, 225, 222);
+    border: 2px solid black;
+    height: 300px;
+    width: 20%;
+   padding: 2%;
+   margin: 1%;
 }
 #text{
     background-color: beige;
@@ -21,6 +30,8 @@ body{
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 300;
+    box-shadow: 2px 3px black;
+    padding-left: 2%;
 }
 a{
     text-decoration: none;
